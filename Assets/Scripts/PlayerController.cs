@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;  //3f is good
     [SerializeField] float rotationSpeed; // 10f is good, 400 by using Ketra Games Version
     [SerializeField] Transform characterMesh;
+    [SerializeField] RoomManager roomManager;
 
     private PlayerControlls playerControlls;
     private Vector2 inputVector;
@@ -53,6 +54,22 @@ public class PlayerController : MonoBehaviour
 
             characterMesh.transform.rotation =
                 Quaternion.RotateTowards(characterMesh.transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "NextLevelCollider")
+        {
+            roomManager.LoadNextRoom();
+        }
+        else if (collision.gameObject.name == "PreviousLevelCollider")
+        {
+            roomManager.LoadPreviousRoom();
+        }
+        else
+        {
+            Debug.Log("Something goes wrong");
         }
     }
 

@@ -378,6 +378,7 @@ MonoBehaviour:
   moveSpeed: 3
   rotationSpeed: 400
   characterMesh: {fileID: 2074595922}
+  roomManager: {fileID: 1070565639}
 --- !u!1001 &642437146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,6 +584,50 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1070565638
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1070565640}
+  - component: {fileID: 1070565639}
+  m_Layer: 0
+  m_Name: RoomManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1070565639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070565638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac7104ad07c01d4bad9af4adb97c33b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1070565640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070565638}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1289424054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,6 +1134,7 @@ SceneRoots:
   - {fileID: 1361584073}
   - {fileID: 1289424054}
   - {fileID: 1971462454}
-  - {fileID: 576055064}
   - {fileID: 642437146}
+  - {fileID: 576055064}
   - {fileID: 2123427275}
+  - {fileID: 1070565640}
