@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3e18302505df7a42823f681f1f11710
+guid: 7cf78e795ef9c5042878b7c9cf3fc7a8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: RoomMat
-    second: {fileID: 2100000, guid: e9f50088e4b9dff4aa5d1775e29e52e4, type: 2}
+      name: BaseGray
+    second: {fileID: 2100000, guid: f14f4bdba5c3a06429bbd10fa8178a0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrownFloorMat
+    second: {fileID: 2100000, guid: 536470f00a217c9408fd2affb9d8d5e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorsillMat
+    second: {fileID: 2100000, guid: a2c95d45149d90541bba90d4bdb4a110, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallBrownMat
+    second: {fileID: 2100000, guid: 5bd4c960d3a8ca047b811cb413a48edc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
