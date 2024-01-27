@@ -154,9 +154,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Back to
+  m_text: 'BACK TO
 
-    Room 1'
+    ROOM 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -183,8 +183,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5.26
-  m_fontSizeBase: 5.26
+  m_fontSize: 3
+  m_fontSizeBase: 3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -511,6 +511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2373241030498593435}
+  - component: {fileID: 7843948395087443379}
   m_Layer: 0
   m_Name: RoomPrefab
   m_TagString: Untagged
@@ -536,6 +537,19 @@ Transform:
   - {fileID: 5002109182785532571}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -135, z: 0}
+--- !u!114 &7843948395087443379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452410617802687170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb9b284cccd638409ae7043cf0092bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preRoomText: {fileID: 296782616344803909}
 --- !u!1001 &7442973835095890000
 PrefabInstance:
   m_ObjectHideFlags: 0

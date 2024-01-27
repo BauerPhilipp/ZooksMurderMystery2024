@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Something goes wrong");
+            //Debug.Log("Other collider");
         }
     }
 
