@@ -17,7 +17,7 @@ public class Room : MonoBehaviour
 
     private void SetPreRoomText()
     {
-        if(sceneNumber == 0) 
+        if(sceneNumber == 1) 
         {
             preRoomText.text = "";
         }

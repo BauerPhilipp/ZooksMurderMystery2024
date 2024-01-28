@@ -1,0 +1,105 @@
+.button-container {
+    flex-grow: 0;
+    width: 436px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 59px;
+    margin-right: 222px;
+    margin-bottom: 372px;
+    margin-left: 59px;
+    border-top-width: 12px;
+    border-right-width: 12px;
+    border-bottom-width: 12px;
+    border-left-width: 12px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    height: 650px;
+    background-image: url('project://database/Assets/Textures/UI/MenuFrame.png?fileID=2800000&guid=f9cfdab9fb92bb441bc47e17c7df1895&type=3#MenuFrame');
+    -unity-background-image-tint-color: rgb(109, 183, 255);
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button {
+    flex-grow: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 316px;
+    height: 70px;
+    background-image: url('project://database/Assets/Textures/UI/ButtonFrame_V2.png?fileID=2800000&guid=e3d7e83411a4d434c818431e8262450d&type=3#ButtonFrame_V2');
+    -unity-background-image-tint-color: rgb(109, 183, 255);
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 35px;
+    margin-right: 0;
+    margin-bottom: 35px;
+    transition-duration: 0.5s;
+}
+
+.menu-button-text {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    letter-spacing: 22px;
+    text-shadow: 5px 5px 0.5px rgba(109, 183, 255, 0.59);
+    -unity-text-outline-color: rgba(0, 0, 0, 0);
+    -unity-font-definition: url('project://database/Assets/Fonts/Kalam/Kalam-Bold.ttf?fileID=12800000&guid=d2a9ff85ece7bfc4d8b0cece0b8646c1&type=3#Kalam-Bold');
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    margin-left: 1px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    -unity-text-align: middle-center;
+}
+
+.menu-button:hover {
+    flex-grow: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 316px;
+    height: 70px;
+    background-image: url('project://database/Assets/Textures/UI/ButtonFrame_V2.png?fileID=2800000&guid=e3d7e83411a4d434c818431e8262450d&type=3#ButtonFrame_V2');
+    -unity-background-image-tint-color: rgb(109, 183, 255);
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 35px;
+    margin-right: 0;
+    margin-bottom: 35px;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    transition-property: all;
+    scale: 1.1 1.1;
+    rotate: 5deg;
+    transition-timing-function: ease;
+}

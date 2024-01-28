@@ -28,7 +28,7 @@ public class RoomManager : MonoBehaviour
 
     public void LoadPreviousRoom()
     {
-        if (activeScene.buildIndex == 0)
+        if (activeScene.buildIndex == 1)
         {
             Debug.Log("First Room! Try to go other direction!");
             return;
