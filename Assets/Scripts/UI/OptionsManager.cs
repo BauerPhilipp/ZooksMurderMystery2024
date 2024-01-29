@@ -43,6 +43,10 @@ public class OptionsManager : MonoBehaviour
         {
             AudioVolumeManager.Instance.AudioVolume = PlayerPrefs.GetFloat("Volume");
         }
+        else
+        {
+            AudioVolumeManager.Instance.AudioVolume = .5f;
+        }
     }
 
     private void SliderTrackerMouseDown(MouseDownEvent e)
