@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class StartUIManager : MonoBehaviour
 
     VisualElement settingsContainer;
 
+    public event Action OnOptionsPressed;
+
     private void Awake()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
@@ -34,8 +37,7 @@ public class StartUIManager : MonoBehaviour
 
 
         startButton.RegisterCallback<ClickEvent>(StartButtonClicked);
-        optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);
-
+        optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);    
 
     }
 
@@ -47,6 +49,7 @@ public class StartUIManager : MonoBehaviour
     private void OptionsButtonClicked(ClickEvent e)
     {
         settingsContainer.visible = !settingsContainer.visible;
+        OnOptionsPressed?.Invoke();
     }
 
 
