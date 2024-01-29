@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class OptionsManager : MonoBehaviour
+public class VolumeManager : MonoBehaviour
 {
 
     VisualElement root;
@@ -16,7 +16,6 @@ public class OptionsManager : MonoBehaviour
 
     bool isVolumePressed = false;
 
-    float mouseStartClickPosition;
 
     private void Awake()
     {
@@ -45,13 +44,13 @@ public class OptionsManager : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetFloat("Volume", .5f);
             AudioVolumeManager.Instance.AudioVolume = .5f;
         }
     }
 
     private void SliderTrackerMouseDown(MouseDownEvent e)
     {
-        Debug.Log(e.localMousePosition);
         isVolumePressed = true;
         volumeDragger.style.left = e.localMousePosition.x - (volumeDragger.resolvedStyle.width / 2);
     }
@@ -79,6 +78,7 @@ public class OptionsManager : MonoBehaviour
         isVolumePressed = false;
         SetVolumeLabel();
         AudioVolumeManager.Instance.AudioVolume = MapSliderToVolumeValue();
+        SaveSettings();
     }
 
     private void SliderTrackerMouseLeave(MouseLeaveEvent e)
@@ -86,6 +86,7 @@ public class OptionsManager : MonoBehaviour
         AudioVolumeManager.Instance.AudioVolume = MapSliderToVolumeValue();
         SetVolumeLabel();
         isVolumePressed = false;
+        SaveSettings();
     }
 
     private float MapSliderToVolumeValue()
@@ -97,7 +98,6 @@ public class OptionsManager : MonoBehaviour
     private void SetDraggerPosition()
     {
         float newDraggerValue = volumeTracker.resolvedStyle.width * AudioVolumeManager.Instance.AudioVolume - volumeDragger.resolvedStyle.width / 2;
-        Debug.Log(newDraggerValue);
         volumeDragger.style.left = newDraggerValue;
     }
 

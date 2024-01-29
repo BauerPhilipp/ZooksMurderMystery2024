@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 
-public class StartUIManager : MonoBehaviour
+public class GameUIManager : MonoBehaviour
 {
     VisualElement root;
     VisualElement startButton;
@@ -15,10 +15,8 @@ public class StartUIManager : MonoBehaviour
     Label optionsButtonLabel;
     VisualElement creditsButton;
     Label creditsButtonLabel;
-    VisualElement settingsButton;
 
     VisualElement settingsContainer;
-    VisualElement buttonContainer;
 
     public event Action OnOptionsPressed;
 
@@ -37,22 +35,9 @@ public class StartUIManager : MonoBehaviour
         settingsContainer = root.Q("SettingsContainer");
         settingsContainer.visible = false;
 
-        settingsButton = root.Q("SettingsButton");
-        buttonContainer = root.Q("ButtonContainer");
 
-        settingsButton.RegisterCallback<ClickEvent>(SettingsButtonPressed);
         startButton.RegisterCallback<ClickEvent>(StartButtonClicked);
-        optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);
-
-        if(SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            buttonContainer.visible = true;
-        }
-        else
-        {
-            buttonContainer.visible = false;
-        }
-
+        optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);    
 
     }
 
@@ -73,12 +58,6 @@ public class StartUIManager : MonoBehaviour
     {
         settingsContainer.visible = !settingsContainer.visible;
         OnOptionsPressed?.Invoke();
-    }
-
-    private void SettingsButtonPressed(ClickEvent e)
-    {
-        buttonContainer.visible = !buttonContainer.visible;
-        settingsContainer.visible = false;
     }
 
 
