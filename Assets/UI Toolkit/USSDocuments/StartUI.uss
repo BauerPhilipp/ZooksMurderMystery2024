@@ -3,9 +3,9 @@
     width: 436px;
     background-color: rgba(0, 0, 0, 0.1);
     margin-top: 59px;
-    margin-right: 130px;
+    margin-right: 66px;
     margin-bottom: 372px;
-    margin-left: 59px;
+    margin-left: 25px;
     border-top-width: 12px;
     border-right-width: 12px;
     border-bottom-width: 12px;
