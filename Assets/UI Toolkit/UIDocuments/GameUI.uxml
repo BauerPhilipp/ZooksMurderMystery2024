@@ -3,8 +3,9 @@
     <ui:VisualElement name="MainContainer" style="flex-grow: 1; flex-direction: row-reverse;">
         <ui:VisualElement name="Settings" style="flex-grow: 0; width: 128px; align-items: center; padding-top: 52px;">
             <ui:VisualElement name="SettingsButton" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Textures/UI/Settings_V4.png?fileID=2800000&amp;guid=3ba80be2756d15048b8730cbb32fc7ef&amp;type=3#Settings_V4&apos;); width: 100px; background-color: rgba(255, 255, 255, 0); height: 100px; -unity-background-image-tint-color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="Notes" style="flex-grow: 0; background-image: url(&apos;project://database/Assets/Textures/UI/Settings_V4.png?fileID=2800000&amp;guid=3ba80be2756d15048b8730cbb32fc7ef&amp;type=3#Settings_V4&apos;); width: 100px; background-color: rgba(255, 255, 255, 0); height: 100px; -unity-background-image-tint-color: rgb(255, 255, 255);" />
         </ui:VisualElement>
-        <ui:VisualElement name="ButtonContainer" class="button-container" style="margin-right: 15px;">
+        <ui:VisualElement name="ButtonContainer" class="button-container" style="margin-right: 15px; visibility: hidden;">
             <ui:VisualElement name="StartButton" class="menu-button">
                 <ui:Label text="MAIN MENU" name="StartButtonLabel" class="menu-button-text" style="font-size: 39px;" />
             </ui:VisualElement>
@@ -12,7 +13,7 @@
                 <ui:Label text="OPTIONS" name="OptionsButtonLabel" class="menu-button-text" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="SettingsContainer" class="button-container" style="margin-right: 0; margin-left: 0; -unity-slice-scale: 1px; -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 164; -unity-slice-top: 0; -unity-slice-right: 164; -unity-slice-bottom: 0; background-image: url(&apos;project://database/Assets/Textures/UI/MenuFrameOptions.png?fileID=2800000&amp;guid=f55664b87d2eed343a5a4a6589e4af64&amp;type=3#MenuFrameOptions&apos;); width: 643px; transition-duration: 0.3s; transition-property: background-image; justify-content: center; visibility: visible; display: flex;">
+        <ui:VisualElement name="SettingsContainer" class="button-container" style="margin-right: 0; margin-left: 0; -unity-slice-scale: 1px; -unity-background-scale-mode: stretch-to-fill; -unity-slice-left: 164; -unity-slice-top: 0; -unity-slice-right: 164; -unity-slice-bottom: 0; background-image: url(&apos;project://database/Assets/Textures/UI/MenuFrameOptions.png?fileID=2800000&amp;guid=f55664b87d2eed343a5a4a6589e4af64&amp;type=3#MenuFrameOptions&apos;); width: 643px; transition-duration: 0.3s; transition-property: background-image; justify-content: center; visibility: hidden; display: flex;">
             <ui:VisualElement name="VolumeContainer" style="flex-grow: 0; width: 100%; height: 99px; align-items: flex-start; justify-content: center; margin-top: 35px; margin-bottom: 35px;">
                 <ui:Label text="Volume" name="VolumeLabel" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Kalam/Kalam-Regular.ttf?fileID=12800000&amp;guid=06479c5fe07907941949fe37c1d6e9a9&amp;type=3#Kalam-Regular&apos;); font-size: 29px; color: rgb(255, 255, 255); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;" />
                 <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: flex-start; width: 600px; background-color: rgb(0, 0, 0); flex-direction: row; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding-top: 7px; padding-right: 20px; padding-bottom: 7px; padding-left: 20px;">
