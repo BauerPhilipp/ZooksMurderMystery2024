@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] RoomManager roomManager;
 
     private PlayerControlls playerControlls;
+    public PlayerControlls PlayerControlls { get { return playerControlls; } private set { } }
     private Vector2 inputVector;
     private Rigidbody rb;
 

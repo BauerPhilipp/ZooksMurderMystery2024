@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 
 public class StartUIManager : MonoBehaviour
 {
+    PlayerControlls playerControlls;
+
     VisualElement root;
     VisualElement startButton;
     Label startButtonLabel;
@@ -16,6 +19,10 @@ public class StartUIManager : MonoBehaviour
     VisualElement creditsButton;
     Label creditsButtonLabel;
     VisualElement settingsButton;
+    VisualElement notesButton;
+    VisualElement notesContainer;
+    bool isNotesActive = false;
+    TextField notesTextField;
 
     VisualElement settingsContainer;
     VisualElement buttonContainer;
@@ -40,6 +47,13 @@ public class StartUIManager : MonoBehaviour
         settingsButton = root.Q("SettingsButton");
         buttonContainer = root.Q("ButtonContainer");
 
+        notesButton = root.Q("NotesButton");
+        notesButton.RegisterCallback<ClickEvent>(NotesButtonClicked);
+        notesContainer = root.Q("NotesContainer");
+        notesTextField = root.Q<TextField>("NotesTextField");
+        notesTextField.RegisterCallback<InputEvent>(NotesTextFieldInput);
+
+
         settingsButton.RegisterCallback<ClickEvent>(SettingsButtonPressed);
         startButton.RegisterCallback<ClickEvent>(StartButtonClicked);
         optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);
@@ -54,6 +68,11 @@ public class StartUIManager : MonoBehaviour
         }
 
 
+    }
+
+    private void Start()
+    {
+        playerControlls = FindAnyObjectByType<PlayerController>().PlayerControlls;
     }
 
     private void StartButtonClicked(ClickEvent e)
@@ -81,6 +100,28 @@ public class StartUIManager : MonoBehaviour
         settingsContainer.visible = false;
     }
 
+    private void NotesTextFieldInput(InputEvent e)
+    {
+        Debug.Log(notesTextField.value);
+    }
 
+    private void NotesButtonClicked(ClickEvent e)
+    {
+        isNotesActive = !isNotesActive;
+        notesContainer.visible = isNotesActive;
+
+        if(isNotesActive)
+        {
+            playerControlls.Disable();
+            Debug.Log("Visible");
+        }
+        else
+        {
+            playerControlls.Enable();
+            Debug.Log("InVisible");
+
+        }
+
+    }
 
 }

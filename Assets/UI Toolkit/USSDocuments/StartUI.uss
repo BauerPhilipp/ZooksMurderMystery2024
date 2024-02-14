@@ -103,3 +103,17 @@
     rotate: 5deg;
     transition-timing-function: ease;
 }
+
+.unity-base-text-field__input {
+    background-color: rgba(156, 118, 108, 0.12);
+    -unity-text-align: upper-left;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 33px;
+    padding-right: 33px;
+    padding-bottom: 33px;
+    padding-left: 33px;
+    font-size: 20px;
+}
