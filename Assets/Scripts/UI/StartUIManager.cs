@@ -31,7 +31,7 @@ public class StartUIManager : MonoBehaviour
     VisualElement settingsContainer;
     VisualElement buttonContainer;
 
-    private int maxTextLength = 60;  //max line length in notes field
+    private int maxTextLength = 55;  //max line length in notes field
 
     public event Action OnOptionsPressed;
 
@@ -108,25 +108,17 @@ public class StartUIManager : MonoBehaviour
     {
         buttonContainer.visible = !buttonContainer.visible;
         settingsContainer.visible = false;
+
+        //set NotesContainer Invisible
+        if (isNotesActive)
+        {
+            isNotesActive = !isNotesActive;
+            notesContainer.visible = isNotesActive;
+        }
     }
 
     private void NotesTextFieldInput(InputEvent e)
     {
-        string[] text = Regex.Split(notesTextField.value, "\n");
-        string newString = "";
-
-        for (int i = 0; i < text.Length; i++)
-        {
-            if (text[i].Length >= maxTextLength)
-            {
-                Debug.Log("Zeile länger als 9");
-                text[i] = text[i].Remove(maxTextLength -1, 1);
-            }
-
-            newString += text[i] + "\n";
-        }
-
-        notesTextField.value = newString;
     }
 
     private void NotesButtonClicked(ClickEvent e)
@@ -135,20 +127,27 @@ public class StartUIManager : MonoBehaviour
         notesContainer.visible = isNotesActive;
         resetNotesString = notesTextField.value;
 
+        //set Options/ButtonContainer Invisible
+        if(isNotesActive)
+        {
+            buttonContainer.visible = false;
+            settingsContainer.visible = false;
+        }
+
         if (isNotesActive)
         {
             playerControlls.Disable();
-            Debug.Log("Visible");
         }
         else
         {
             playerControlls.Enable();
-            Debug.Log("InVisible");
-
         }
     }
     private void ResetNotesButtonClicked(ClickEvent e)
     {
         notesTextField.value = resetNotesString;
     }
+
+
+
 }
