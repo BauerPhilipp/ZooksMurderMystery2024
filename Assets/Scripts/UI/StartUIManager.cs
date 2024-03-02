@@ -25,7 +25,7 @@ public class StartUIManager : MonoBehaviour
     bool isNotesActive = false;
     TextField notesTextField;
     Button resetButton;
-    string resetNotesString;
+    string resetNotesString = "";
 
 
     VisualElement settingsContainer;
@@ -37,44 +37,46 @@ public class StartUIManager : MonoBehaviour
 
     private void Awake()
     {
-        root = GetComponent<UIDocument>().rootVisualElement;
-        startButton = root.Q("StartButton");
-        startButtonLabel = root.Q<Label>("StartButtonLabel");
+            root = GetComponent<UIDocument>().rootVisualElement;
+            startButton = root.Q("StartButton");
+            startButtonLabel = root.Q<Label>("StartButtonLabel");
 
-        optionsButton = root.Q("OptionsButton");
-        optionsButtonLabel = root.Q<Label>("OptionsButtonLabel");
+            optionsButton = root.Q("OptionsButton");
+            optionsButtonLabel = root.Q<Label>("OptionsButtonLabel");
 
-        creditsButton = root.Q("CreditsButton");
-        creditsButtonLabel = root.Q<Label>("CreditsButtonLabel");
+            creditsButton = root.Q("CreditsButton");
+            creditsButtonLabel = root.Q<Label>("CreditsButtonLabel");
 
-        settingsContainer = root.Q("SettingsContainer");
-        settingsContainer.visible = false;
+            settingsContainer = root.Q("SettingsContainer");
+            settingsContainer.visible = false;
 
-        settingsButton = root.Q("SettingsButton");
-        buttonContainer = root.Q("ButtonContainer");
+            settingsButton = root.Q("SettingsButton");
+            buttonContainer = root.Q("ButtonContainer");
 
-        notesButton = root.Q("NotesButton");
-        notesButton.RegisterCallback<ClickEvent>(NotesButtonClicked);
-        notesContainer = root.Q("NotesContainer");
-        notesTextField = root.Q<TextField>("NotesTextField");
-        notesTextField.RegisterCallback<InputEvent>(NotesTextFieldInput);
+            notesButton = root.Q("NotesButton");
+            notesButton.RegisterCallback<ClickEvent>(NotesButtonClicked);
+            notesContainer = root.Q("NotesContainer");
+            notesTextField = root.Q<TextField>("NotesTextField");
+            notesTextField.RegisterCallback<InputEvent>(NotesTextFieldInput);
 
-        resetButton = root.Q<Button>("ResetButton");
-        resetButton.RegisterCallback<ClickEvent>(ResetNotesButtonClicked);
+            resetButton = root.Q<Button>("ResetButton");
+            resetButton.RegisterCallback<ClickEvent>(ResetNotesButtonClicked);
 
 
-        settingsButton.RegisterCallback<ClickEvent>(SettingsButtonPressed);
-        startButton.RegisterCallback<ClickEvent>(StartButtonClicked);
-        optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);
-
+            settingsButton.RegisterCallback<ClickEvent>(SettingsButtonPressed);
+            startButton.RegisterCallback<ClickEvent>(StartButtonClicked);
+            optionsButton.RegisterCallback<ClickEvent>(OptionsButtonClicked);
+        
 
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             buttonContainer.visible = true;
+            startButtonLabel.text = "START GAME";
         }
         else
         {
             buttonContainer.visible = false;
+            startButtonLabel.text = "MAIN MENU";
         }
 
 
@@ -83,6 +85,7 @@ public class StartUIManager : MonoBehaviour
     private void Start()
     {
         playerControlls = FindAnyObjectByType<PlayerController>().PlayerControlls;
+        notesTextField.value = PlayerPrefs.GetString("notes");
     }
 
     private void StartButtonClicked(ClickEvent e)
@@ -126,6 +129,7 @@ public class StartUIManager : MonoBehaviour
         isNotesActive = !isNotesActive;
         notesContainer.visible = isNotesActive;
         resetNotesString = notesTextField.value;
+        PlayerPrefs.SetString("notes", resetNotesString);
 
         //set Options/ButtonContainer Invisible
         if(isNotesActive)
